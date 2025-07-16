@@ -1,0 +1,19 @@
+services:
+  user_service:
+    build: ./user_service
+    ports:
+      - "5001:5001"
+    networks:
+      - microservices-net
+
+  order_service:
+    build: ./order_service
+    ports:
+      - "5002:5002"
+    depends_on:
+      - user_service
+    networks:
+      - microservices-net
+
+networks:
+  microservices-net:

@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build Tetris",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "main.cpp",
+        "-o",
+        "tetris.exe",
+        "-L","-D:/MinGW/lib/libfreeglut.a",
+        "-lopengl32",
+        "-lglu32",
+        "-mwindows",
+        "-DGLUT_DISABLE_ATEXIT_HACK"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
